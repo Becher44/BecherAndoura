@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/BecherAndoura.Api/BecherAndoura.Api.csproj" />
+    <Project Path="src/BecherAndoura.Application/BecherAndoura.Application.csproj" />
+    <Project Path="src/BecherAndoura.Domain/BecherAndoura.Domain.csproj" />
+    <Project Path="src/BecherAndoura.Infrastructure/BecherAndoura.Infrastructure.csproj" />
+  </Folder>
+</Solution>
