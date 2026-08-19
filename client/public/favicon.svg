@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Becher Andoura</title>
+  <rect width="64" height="64" rx="12" fill="#101820"/>
+  <path d="M14 44V20h12.4c5.1 0 8.4 2.7 8.4 6.8 0 2.4-1.2 4.3-3.2 5.3 2.7 1 4.3 3.1 4.3 6 0 4.3-3.5 6.9-9 6.9H14zm6-14.2h5.5c2.1 0 3.3-1 3.3-2.6s-1.2-2.6-3.3-2.6H20v5.2zm0 10.6h6.3c2.2 0 3.5-1 3.5-2.8s-1.3-2.9-3.6-2.9H20v5.7z" fill="#ffffff"/>
+  <path d="M37.2 44 46 20h5.1l8.9 24h-6.2l-1.5-4.7h-7.8L43 44h-5.8zm8.8-9.3h4.9l-2.5-7.6-2.4 7.6z" fill="#f2d4c4"/>
+</svg>

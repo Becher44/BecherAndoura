@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { SeoService } from '../../core/seo/seo.service';
+import { siteSeoMetadata } from '../../core/seo/site-seo.config';
 import { PortfolioApiService } from '../../core/services/portfolio-api.service';
 
 type ContactStatus = 'idle' | 'sending' | 'sent' | 'error';
@@ -14,6 +16,7 @@ type ContactControlName = 'name' | 'email' | 'company' | 'budget' | 'message';
 })
 export class PortfolioPageComponent implements OnInit {
   private readonly formBuilder = inject(NonNullableFormBuilder);
+  private readonly seo = inject(SeoService);
   readonly portfolio = inject(PortfolioApiService);
   readonly content = this.portfolio.content;
   readonly contactStatus = signal<ContactStatus>('idle');
@@ -28,6 +31,7 @@ export class PortfolioPageComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    this.seo.apply(siteSeoMetadata);
     this.portfolio.load();
   }
 

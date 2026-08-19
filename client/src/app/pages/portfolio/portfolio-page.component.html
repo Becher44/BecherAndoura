@@ -1,4 +1,5 @@
 <header class="site-header">
+  <a class="skip-link" href="#services">Skip to content</a>
   <a class="brand" href="#top" aria-label="Becher Andoura home">
     <span class="brand__mark">BA</span>
     <span>Becher Andoura</span>
@@ -17,6 +18,7 @@
     <div class="hero__inner">
       <p class="eyebrow">{{ content().profile.role }}</p>
       <h1 id="hero-title">{{ content().profile.name }}</h1>
+      <span class="sr-only">Angular and .NET software developer offering website and web application development services.</span>
       <p class="hero__copy">{{ content().profile.tagline }}</p>
 
       <div class="hero__actions" aria-label="Main actions">
@@ -53,9 +55,9 @@
 
       <div class="service-grid">
         @for (service of content().services; track service.title) {
-          <article class="service-card">
+          <article class="service-card" itemscope itemtype="https://schema.org/Service">
             <h3>{{ service.title }}</h3>
-            <p>{{ service.summary }}</p>
+            <p itemprop="description">{{ service.summary }}</p>
             <ul>
               @for (deliverable of service.deliverables; track deliverable) {
                 <li>{{ deliverable }}</li>
@@ -76,10 +78,10 @@
 
       <div class="project-grid">
         @for (project of content().projects; track project.name) {
-          <article class="project-card">
+          <article class="project-card" itemscope itemtype="https://schema.org/CreativeWork">
             <span>{{ project.type }}</span>
-            <h3>{{ project.name }}</h3>
-            <p>{{ project.summary }}</p>
+            <h3 itemprop="name">{{ project.name }}</h3>
+            <p itemprop="description">{{ project.summary }}</p>
             <ul>
               @for (result of project.results; track result) {
                 <li>{{ result }}</li>

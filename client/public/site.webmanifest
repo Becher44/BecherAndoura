@@ -1,0 +1,18 @@
+{
+  "name": "Becher Andoura",
+  "short_name": "Becher",
+  "description": "Angular and .NET website development services by Becher Andoura.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f9fb",
+  "theme_color": "#101820",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
