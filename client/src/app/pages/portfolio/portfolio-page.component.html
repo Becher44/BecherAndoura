@@ -1,14 +1,14 @@
 <header class="site-header">
   <a class="skip-link" href="#services">Skip to content</a>
   <a class="brand" href="#top" aria-label="Becher Andoura home">
-    <span class="brand__mark">BA</span>
-    <span>Becher Andoura</span>
+    <img class="brand__logo brand__logo--full" src="/images/becher-andoura-logo.svg" alt="Becher Andoura">
+    <img class="brand__logo brand__logo--mark" src="/images/becher-andoura-mark.svg" alt="">
   </a>
 
   <nav class="site-nav" aria-label="Primary navigation">
-    <a href="#services">Services</a>
-    <a href="#work">Work</a>
-    <a href="#process">Process</a>
+    <a href="#services">What I Do</a>
+    <a href="#requests">Requests</a>
+    <a href="#process">How It Works</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -18,14 +18,14 @@
     <div class="hero__inner">
       <p class="eyebrow">{{ content().profile.role }}</p>
       <h1 id="hero-title">{{ content().profile.name }}</h1>
-      <span class="sr-only">Angular and .NET software developer offering website and web application development services.</span>
+      <span class="sr-only">Website developer offering business websites, request forms, customer portals, and website improvement services.</span>
       <p class="hero__copy">{{ content().profile.tagline }}</p>
 
       <div class="hero__actions" aria-label="Main actions">
         <button class="button button--primary" type="button" (click)="scrollToContact()">
-          Start a project
+          Request a website
         </button>
-        <a class="button button--secondary" href="#services">View services</a>
+        <a class="button button--secondary" href="#services">See what I can build</a>
       </div>
 
       <div class="hero__highlights" aria-label="Technical highlights">
@@ -33,6 +33,10 @@
           <span>{{ highlight }}</span>
         }
       </div>
+
+      <p class="hero__customer-note">
+        You do not need to know the technical details. Tell me what your business offers and what customers should be able to do online.
+      </p>
     </div>
   </section>
 
@@ -48,8 +52,8 @@
   <section id="services" class="section section--light">
     <div class="section__inner">
       <div class="section__intro">
-        <p class="eyebrow">Services</p>
-        <h2>Website and application development for businesses that need reliable delivery.</h2>
+        <p class="eyebrow">What I Do</p>
+        <h2>Choose the kind of website help you need.</h2>
         <p>{{ content().profile.bio }}</p>
       </div>
 
@@ -69,11 +73,11 @@
     </div>
   </section>
 
-  <section id="work" class="section section--surface">
+  <section id="requests" class="section section--surface">
     <div class="section__inner">
       <div class="section__intro">
-        <p class="eyebrow">Selected Work Types</p>
-        <h2>Built for clear offers, smooth workflows, and maintainable systems.</h2>
+        <p class="eyebrow">Common Requests</p>
+        <h2>Start with a simple request. I will help turn it into the right website plan.</h2>
       </div>
 
       <div class="project-grid">
@@ -97,7 +101,7 @@
     <div class="section__inner section__inner--split">
       <div class="section__intro">
         <p class="eyebrow">Process</p>
-        <h2>A practical delivery path from first brief to launch.</h2>
+        <h2>Simple steps from first message to launched website.</h2>
         <p>{{ content().profile.availability }}</p>
       </div>
 
@@ -118,8 +122,8 @@
   <section class="section section--light">
     <div class="section__inner">
       <div class="section__intro">
-        <p class="eyebrow">Technology</p>
-        <h2>Latest Angular and .NET foundations with clean boundaries.</h2>
+        <p class="eyebrow">What You Get</p>
+        <h2>A customer-friendly website with strong technical foundations behind it.</h2>
       </div>
 
       <div class="tech-grid">
@@ -140,10 +144,10 @@
   <section id="contact" class="section section--contact">
     <div class="section__inner contact-layout">
       <div class="contact-copy">
-        <p class="eyebrow">Contact</p>
-        <h2>Tell Becher what you want to build.</h2>
+        <p class="eyebrow">Request a Service</p>
+        <h2>Tell Becher what you need in normal words.</h2>
         <p>
-          Share the website, portal, or application you have in mind. The form goes to the .NET API and is ready to connect to email, CRM, or a database next.
+          You can describe the website you want, the problem with your current website, or the type of customers you want to reach. No technical explanation is required.
         </p>
 
         @if (portfolio.error()) {
@@ -177,41 +181,46 @@
         </label>
 
         <label>
-          <span>Budget</span>
-          <select formControlName="budget">
-            <option value="">Select range</option>
-            <option value="Starter website">Starter website</option>
-            <option value="Business website">Business website</option>
-            <option value="Custom web app">Custom web app</option>
-            <option value="Ongoing support">Ongoing support</option>
+          <span>What do you need?</span>
+          <select formControlName="projectType">
+            <option value="">Select one</option>
+            <option value="New business website">New business website</option>
+            <option value="Booking or quote form">Booking or quote form</option>
+            <option value="Customer portal">Customer portal</option>
+            <option value="Improve current website">Improve current website</option>
+            <option value="Not sure yet">Not sure yet</option>
           </select>
-          @if (getControlError('budget')) {
-            <small>{{ getControlError('budget') }}</small>
+          @if (getControlError('projectType')) {
+            <small>{{ getControlError('projectType') }}</small>
           }
         </label>
 
         <label class="contact-form__full">
-          <span>Project details</span>
+          <span>What should the website help you do?</span>
           <textarea formControlName="message" rows="6"></textarea>
           @if (getControlError('message')) {
             <small>{{ getControlError('message') }}</small>
           }
         </label>
 
+        <p class="form-hint contact-form__full">
+          Example: I need a website for my cleaning company where customers can see services and request a quote.
+        </p>
+
         <button class="button button--primary contact-form__full" type="submit" [disabled]="contactStatus() === 'sending'">
           @if (contactStatus() === 'sending') {
             Sending...
           } @else {
-            Send project inquiry
+            Request service
           }
         </button>
 
         @if (contactStatus() === 'sent') {
-          <p class="form-status form-status--success">Thanks. Your inquiry was accepted by the API.</p>
+          <p class="form-status form-status--success">Thanks. Your request was sent successfully.</p>
         }
 
         @if (contactStatus() === 'error') {
-          <p class="form-status form-status--error">The API is not reachable yet. Start the .NET backend and try again.</p>
+          <p class="form-status form-status--error">The form service is not reachable yet. Please try again in a moment.</p>
         }
       </form>
     </div>
@@ -219,6 +228,8 @@
 </main>
 
 <footer class="site-footer">
-  <span>Becher Andoura</span>
+  <a class="footer-brand" href="#top" aria-label="Becher Andoura home">
+    <img src="/images/becher-andoura-logo.svg" alt="Becher Andoura">
+  </a>
   <span>{{ currentYear }}</span>
 </footer>

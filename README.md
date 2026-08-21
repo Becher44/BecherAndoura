@@ -1,6 +1,6 @@
 # Becher Andoura Website
 
-Personal portfolio and service website for Becher Andoura, built with Angular 22 and .NET 10.
+Customer-friendly portfolio and service request website for Becher Andoura, built with Angular 22 and .NET 10.
 
 ## Structure
 
@@ -33,3 +33,4 @@ Open `http://localhost:4300`. The Angular dev proxy forwards `/api` requests to 
 - The backend uses Clean Architecture style boundaries, dependency inversion, repository abstractions, validation services, and Minimal API endpoint groups.
 - The frontend uses standalone Angular components, signals, reactive forms, strict TypeScript, responsive SCSS, and API fallback content.
 - SEO assets live in `client/src/index.html`, `client/src/app/core/seo`, and `client/public`. Update `https://becherandoura.com` in those files if the production domain changes.
+- Logo assets live in `client/public/images/becher-andoura-logo.svg`, `client/public/images/becher-andoura-mark.svg`, and `client/public/favicon.svg`.

@@ -34,7 +34,7 @@ export class PortfolioApiService {
       .pipe(
         tap((content) => this.contentSignal.set(content)),
         catchError(() => {
-          this.errorSignal.set('Showing local content while the API starts.');
+          this.errorSignal.set('Showing website details while the form service starts.');
           return of(null);
         }),
         finalize(() => this.loadingSignal.set(false))

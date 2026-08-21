@@ -4,6 +4,6 @@ public sealed record ContactLead(
     string Name,
     string Email,
     string? Company,
-    string? Budget,
+    string? ProjectType,
     string Message,
     DateTimeOffset SubmittedAt);

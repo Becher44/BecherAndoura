@@ -2,11 +2,13 @@ import { SeoMetadata } from './seo.model';
 
 const siteUrl = 'https://becherandoura.com';
 const heroImageUrl = `${siteUrl}/images/becher-hero-workspace.png`;
+const logoUrl = `${siteUrl}/images/becher-andoura-logo.svg`;
+const logoMarkUrl = `${siteUrl}/images/becher-andoura-mark.svg`;
 
 export const siteSeoMetadata: SeoMetadata = {
-  title: 'Becher Andoura | Angular & .NET Website Developer',
+  title: 'Becher Andoura | Website Creation Services',
   description:
-    'Becher Andoura builds modern websites, web applications, and .NET APIs with Angular, clean architecture, responsive design, and reliable delivery.',
+    'Request a clear, modern website, quote form, customer portal, or website improvement service from Becher Andoura. No technical explanation required.',
   canonicalUrl: `${siteUrl}/`,
   imageUrl: heroImageUrl,
   imageAlt: 'Modern software developer workspace for website and application development',
@@ -14,12 +16,12 @@ export const siteSeoMetadata: SeoMetadata = {
   imageHeight: 941,
   keywords: [
     'Becher Andoura',
-    'software developer',
-    'Angular developer',
-    '.NET developer',
-    'website development',
-    'web application development',
-    'clean architecture'
+    'website creation',
+    'business website',
+    'request website service',
+    'quote form',
+    'customer portal',
+    'website improvement'
   ],
   structuredData: {
     '@context': 'https://schema.org',
@@ -28,23 +30,31 @@ export const siteSeoMetadata: SeoMetadata = {
         '@type': 'Person',
         '@id': `${siteUrl}/#person`,
         name: 'Becher Andoura',
-        jobTitle: 'Software Developer',
+        jobTitle: 'Website Developer and Software Developer',
         url: `${siteUrl}/`,
         image: heroImageUrl,
-        knowsAbout: ['Angular', '.NET', 'ASP.NET Core', 'TypeScript', 'Clean Architecture', 'Website Development']
+        logo: logoMarkUrl,
+        knowsAbout: ['Website Creation', 'Business Websites', 'Quote Forms', 'Customer Portals', 'Angular', '.NET']
       },
       {
         '@type': 'ProfessionalService',
         '@id': `${siteUrl}/#service`,
         name: 'Becher Andoura Website Development',
         url: `${siteUrl}/`,
-        description: 'Website and web application development services using Angular and .NET.',
+        description: 'Website creation, request form, customer portal, and website improvement services for businesses.',
         image: heroImageUrl,
+        logo: logoUrl,
         provider: {
           '@id': `${siteUrl}/#person`
         },
         areaServed: 'Worldwide',
-        serviceType: ['Website Development', 'Web Application Development', '.NET API Development']
+        serviceType: [
+          'Website Creation',
+          'Business Website Development',
+          'Quote Request Forms',
+          'Customer Portals',
+          'Website Improvements'
+        ]
       },
       {
         '@type': 'WebSite',
