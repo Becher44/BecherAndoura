@@ -48,7 +48,7 @@ export interface ContactPayload {
   name: string;
   email: string;
   company: string;
-  budget: string;
+  projectType: string;
   message: string;
 }
 
@@ -59,143 +59,143 @@ export interface ContactResponse {
 export const fallbackPortfolioContent: PortfolioContent = {
   profile: {
     name: 'Becher Andoura',
-    role: 'Software Developer',
-    tagline: 'Modern websites and web applications built with Angular, .NET, clean architecture, and pragmatic delivery.',
-    bio: 'I help businesses turn ideas into polished digital products, from service websites and landing pages to API-backed portals, dashboards, and booking flows.',
-    availability: 'Available for freelance website and web application projects',
+    role: 'Website Developer & Software Developer',
+    tagline: 'I create clear, modern websites for businesses that want more customers, more trust, and an easier way to receive requests online.',
+    bio: 'Whether you need a simple business website, a booking form, a customer portal, or improvements to an existing site, I can help you plan it, build it, and launch it.',
+    availability: 'Available for website creation, redesigns, forms, portals, and ongoing support',
     highlights: [
-      'Angular 22 frontends',
-      '.NET 10 APIs',
-      'Clean Architecture',
-      'Responsive, SEO-ready delivery'
+      'Business websites',
+      'Service request forms',
+      'Customer portals',
+      'Website fixes and improvements'
     ]
   },
   services: [
     {
-      title: 'Website Design & Development',
-      summary: 'Responsive websites that present your offer clearly, load quickly, and convert visitors into leads.',
+      title: 'Create a New Website',
+      summary: 'A professional website that explains who you are, what you offer, and how customers can contact you.',
       deliverables: [
-        'Portfolio and business websites',
-        'Landing pages for campaigns',
-        'CMS-ready content structure',
-        'Search and accessibility foundations'
+        'Home, about, services, and contact pages',
+        'Mobile-friendly design',
+        'Clear calls to action',
+        'Basic SEO setup'
       ]
     },
     {
-      title: 'Web Applications & Portals',
-      summary: 'Custom Angular applications for workflows that need forms, dashboards, secure data, and real business logic.',
+      title: 'Add Forms and Requests',
+      summary: 'Make it easy for visitors to send inquiries, ask for quotes, book a service, or share project details.',
       deliverables: [
-        'Admin dashboards',
-        'Client portals',
-        'Booking and request flows',
-        'Role-ready application structure'
+        'Contact and quote forms',
+        'Booking request flows',
+        'Email or database-ready submissions',
+        'Simple admin-friendly structure'
       ]
     },
     {
-      title: 'API & Backend Engineering',
-      summary: '.NET APIs designed around clear contracts, validation, maintainability, and future integrations.',
+      title: 'Build a Customer Portal',
+      summary: 'A private area where customers or staff can log in, view information, send updates, or manage requests.',
       deliverables: [
-        'REST endpoints and OpenAPI',
-        'Clean Architecture layers',
-        'Integrations and automation',
-        'Performance-minded backend design'
+        'Client dashboards',
+        'Request tracking',
+        'Secure backend APIs',
+        'Future integration support'
       ]
     },
     {
-      title: 'Modernization & Care',
-      summary: 'Upgrade older sites or applications with stronger UX, cleaner code, better performance, and a safer delivery path.',
+      title: 'Improve an Existing Website',
+      summary: 'Refresh an old website so it looks better, works faster, and is easier for customers to use.',
       deliverables: [
-        'Angular and .NET upgrades',
+        'Better layout and content',
         'Performance improvements',
-        'Bug fixing and refactoring',
-        'Deployment support'
+        'Bug fixes',
+        'Launch and support help'
       ]
     }
   ],
   process: [
     {
-      name: 'Discover',
-      description: 'Clarify the audience, offer, pages, integrations, and success metrics before writing code.'
+      name: 'Tell Me What You Need',
+      description: 'You describe your business, your service, and what customers should be able to do on the website.'
     },
     {
-      name: 'Structure',
-      description: 'Model the domain, content, API contracts, and component boundaries so the project can grow cleanly.'
+      name: 'Get a Clear Plan',
+      description: 'I turn your idea into pages, features, timeline, and next steps written in simple language.'
     },
     {
-      name: 'Build',
-      description: 'Develop in focused slices with Angular, .NET, validation, responsive UI, and maintainable patterns.'
+      name: 'Watch It Take Shape',
+      description: 'I build the website in small visible steps so you can review the content and design early.'
     },
     {
-      name: 'Launch',
-      description: 'Prepare production settings, polish edge cases, and hand over a codebase that is easy to continue.'
+      name: 'Launch With Confidence',
+      description: 'I help prepare the final version, connect the request form, and explain how the website works.'
     }
   ],
   projects: [
     {
-      name: 'Service Business Website',
-      type: 'Marketing site',
-      summary: 'A polished service website structure for explaining offers, building trust, and turning visitors into inquiries.',
+      name: 'Business Website',
+      type: 'Most requested',
+      summary: 'A website for a company, freelancer, clinic, agency, restaurant, or local service provider.',
       results: [
-        'Conversion-first page flow',
-        'Fast responsive layout',
-        'Clear service and contact sections'
+        'Explain services clearly',
+        'Build trust with customers',
+        'Receive calls, messages, or quote requests'
       ]
     },
     {
-      name: 'Operations Portal',
-      type: 'Angular web app',
-      summary: 'A dashboard-style application foundation for managing forms, statuses, internal workflows, and secure API data.',
+      name: 'Booking or Quote Request',
+      type: 'Customer action',
+      summary: 'A simple online flow where visitors tell you what they need without calling first.',
       results: [
-        'Reusable component structure',
-        'API-driven data model',
-        'Scalable feature organization'
+        'Collect customer details',
+        'Ask the right questions',
+        'Save time before the first conversation'
       ]
     },
     {
-      name: 'API-Backed Booking Flow',
-      type: '.NET integration',
-      summary: 'A backend-first flow for collecting requests, validating data, and preparing integrations with scheduling or CRM tools.',
+      name: 'Client or Staff Portal',
+      type: 'Custom system',
+      summary: 'A secure web app for customers, employees, or partners who need to view and manage information.',
       results: [
-        'Validation and error handling',
-        'OpenAPI-ready endpoints',
-        'Clean service boundaries'
+        'Organize requests',
+        'Show useful status updates',
+        'Prepare for future business growth'
       ]
     }
   ],
   technologies: [
     {
-      name: 'Frontend',
-      items: ['Angular 22', 'TypeScript', 'Signals', 'Reactive Forms', 'SCSS']
+      name: 'What Customers See',
+      items: ['Clear pages', 'Fast loading', 'Mobile layout', 'Easy contact buttons']
     },
     {
-      name: 'Backend',
-      items: ['.NET 10', 'ASP.NET Core', 'Minimal APIs', 'OpenAPI', 'Dependency Injection']
+      name: 'What You Receive',
+      items: ['Website files', 'Request form', 'Admin-ready structure', 'Launch guidance']
     },
     {
-      name: 'Architecture',
-      items: ['SOLID', 'Clean Architecture', 'Repository Pattern', 'DTO contracts', 'Validation']
+      name: 'Built With',
+      items: ['Angular', '.NET', 'Secure APIs', 'Clean code']
     },
     {
-      name: 'Delivery',
-      items: ['Responsive UI', 'Accessibility basics', 'Performance budgets', 'Deployment-ready setup']
+      name: 'Prepared For',
+      items: ['SEO basics', 'Accessibility basics', 'Future features', 'Ongoing support']
     }
   ],
   outcomes: [
     {
-      metric: '4',
-      label: 'service tracks'
+      metric: '1',
+      label: 'simple request form'
     },
     {
-      metric: '10',
-      label: 'technology baseline'
+      metric: '4',
+      label: 'common service options'
     },
     {
       metric: '100%',
-      label: 'responsive layout'
+      label: 'mobile-friendly'
     },
     {
-      metric: '1',
-      label: 'clear contact path'
+      metric: '0',
+      label: 'technical words needed'
     }
   ]
 };

@@ -152,7 +152,8 @@ h3 {
 }
 
 .hero__actions,
-.hero__highlights {
+.hero__highlights,
+.hero__customer-note {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
@@ -215,6 +216,16 @@ h3 {
   padding: 0.55rem 0.75rem;
   color: rgba(255, 255, 255, 0.9);
   background: rgba(16, 24, 32, 0.4);
+}
+
+.hero__customer-note {
+  max-width: 660px;
+  margin: 1.25rem 0 0;
+  border-left: 4px solid var(--copper-soft);
+  padding: 0.2rem 0 0.2rem 1rem;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 1.02rem;
+  line-height: 1.6;
 }
 
 .outcomes {
@@ -478,12 +489,20 @@ h3 {
 }
 
 .form-status,
-.api-note {
+.api-note,
+.form-hint {
   grid-column: 1 / -1;
   margin: 0;
   border-radius: 8px;
   padding: 0.85rem 1rem;
   font-weight: 800;
+}
+
+.form-hint {
+  color: var(--ink-muted);
+  background: var(--paper);
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 .form-status--success {

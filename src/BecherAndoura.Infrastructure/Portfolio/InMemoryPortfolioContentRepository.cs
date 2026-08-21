@@ -8,100 +8,100 @@ public sealed class InMemoryPortfolioContentRepository : IPortfolioContentReposi
     private static readonly PortfolioContent Content = new(
         new DeveloperProfile(
             "Becher Andoura",
-            "Software Developer",
-            "Modern websites and web applications built with Angular, .NET, clean architecture, and pragmatic delivery.",
-            "I help businesses turn ideas into polished digital products, from service websites and landing pages to API-backed portals, dashboards, and booking flows.",
-            "Available for freelance website and web application projects",
+            "Website Developer & Software Developer",
+            "I create clear, modern websites for businesses that want more customers, more trust, and an easier way to receive requests online.",
+            "Whether you need a simple business website, a booking form, a customer portal, or improvements to an existing site, I can help you plan it, build it, and launch it.",
+            "Available for website creation, redesigns, forms, portals, and ongoing support",
             [
-                "Angular 22 frontends",
-                ".NET 10 APIs",
-                "Clean Architecture",
-                "Responsive, SEO-ready delivery"
+                "Business websites",
+                "Service request forms",
+                "Customer portals",
+                "Website fixes and improvements"
             ]),
         [
             new ServiceOffer(
-                "Website Design & Development",
-                "Responsive websites that present your offer clearly, load quickly, and convert visitors into leads.",
+                "Create a New Website",
+                "A professional website that explains who you are, what you offer, and how customers can contact you.",
                 [
-                    "Portfolio and business websites",
-                    "Landing pages for campaigns",
-                    "CMS-ready content structure",
-                    "Search and accessibility foundations"
+                    "Home, about, services, and contact pages",
+                    "Mobile-friendly design",
+                    "Clear calls to action",
+                    "Basic SEO setup"
                 ]),
             new ServiceOffer(
-                "Web Applications & Portals",
-                "Custom Angular applications for workflows that need forms, dashboards, secure data, and real business logic.",
+                "Add Forms and Requests",
+                "Make it easy for visitors to send inquiries, ask for quotes, book a service, or share project details.",
                 [
-                    "Admin dashboards",
-                    "Client portals",
-                    "Booking and request flows",
-                    "Role-ready application structure"
+                    "Contact and quote forms",
+                    "Booking request flows",
+                    "Email or database-ready submissions",
+                    "Simple admin-friendly structure"
                 ]),
             new ServiceOffer(
-                "API & Backend Engineering",
-                ".NET APIs designed around clear contracts, validation, maintainability, and future integrations.",
+                "Build a Customer Portal",
+                "A private area where customers or staff can log in, view information, send updates, or manage requests.",
                 [
-                    "REST endpoints and OpenAPI",
-                    "Clean Architecture layers",
-                    "Integrations and automation",
-                    "Performance-minded backend design"
+                    "Client dashboards",
+                    "Request tracking",
+                    "Secure backend APIs",
+                    "Future integration support"
                 ]),
             new ServiceOffer(
-                "Modernization & Care",
-                "Upgrade older sites or applications with stronger UX, cleaner code, better performance, and a safer delivery path.",
+                "Improve an Existing Website",
+                "Refresh an old website so it looks better, works faster, and is easier for customers to use.",
                 [
-                    "Angular and .NET upgrades",
+                    "Better layout and content",
                     "Performance improvements",
-                    "Bug fixing and refactoring",
-                    "Deployment support"
+                    "Bug fixes",
+                    "Launch and support help"
                 ])
         ],
         [
-            new ProcessStep("Discover", "Clarify the audience, offer, pages, integrations, and success metrics before writing code."),
-            new ProcessStep("Structure", "Model the domain, content, API contracts, and component boundaries so the project can grow cleanly."),
-            new ProcessStep("Build", "Develop in focused slices with Angular, .NET, validation, responsive UI, and maintainable patterns."),
-            new ProcessStep("Launch", "Prepare production settings, polish edge cases, and hand over a codebase that is easy to continue.")
+            new ProcessStep("Tell Me What You Need", "You describe your business, your service, and what customers should be able to do on the website."),
+            new ProcessStep("Get a Clear Plan", "I turn your idea into pages, features, timeline, and next steps written in simple language."),
+            new ProcessStep("Watch It Take Shape", "I build the website in small visible steps so you can review the content and design early."),
+            new ProcessStep("Launch With Confidence", "I help prepare the final version, connect the request form, and explain how the website works.")
         ],
         [
             new ProjectCaseStudy(
-                "Service Business Website",
-                "Marketing site",
-                "A polished service website structure for explaining offers, building trust, and turning visitors into inquiries.",
+                "Business Website",
+                "Most requested",
+                "A website for a company, freelancer, clinic, agency, restaurant, or local service provider.",
                 [
-                    "Conversion-first page flow",
-                    "Fast responsive layout",
-                    "Clear service and contact sections"
+                    "Explain services clearly",
+                    "Build trust with customers",
+                    "Receive calls, messages, or quote requests"
                 ]),
             new ProjectCaseStudy(
-                "Operations Portal",
-                "Angular web app",
-                "A dashboard-style application foundation for managing forms, statuses, internal workflows, and secure API data.",
+                "Booking or Quote Request",
+                "Customer action",
+                "A simple online flow where visitors tell you what they need without calling first.",
                 [
-                    "Reusable component structure",
-                    "API-driven data model",
-                    "Scalable feature organization"
+                    "Collect customer details",
+                    "Ask the right questions",
+                    "Save time before the first conversation"
                 ]),
             new ProjectCaseStudy(
-                "API-Backed Booking Flow",
-                ".NET integration",
-                "A backend-first flow for collecting requests, validating data, and preparing integrations with scheduling or CRM tools.",
+                "Client or Staff Portal",
+                "Custom system",
+                "A secure web app for customers, employees, or partners who need to view and manage information.",
                 [
-                    "Validation and error handling",
-                    "OpenAPI-ready endpoints",
-                    "Clean service boundaries"
+                    "Organize requests",
+                    "Show useful status updates",
+                    "Prepare for future business growth"
                 ])
         ],
         [
-            new TechnologyGroup("Frontend", ["Angular 22", "TypeScript", "Signals", "Reactive Forms", "SCSS"]),
-            new TechnologyGroup("Backend", [".NET 10", "ASP.NET Core", "Minimal APIs", "OpenAPI", "Dependency Injection"]),
-            new TechnologyGroup("Architecture", ["SOLID", "Clean Architecture", "Repository Pattern", "DTO contracts", "Validation"]),
-            new TechnologyGroup("Delivery", ["Responsive UI", "Accessibility basics", "Performance budgets", "Deployment-ready setup"])
+            new TechnologyGroup("What Customers See", ["Clear pages", "Fast loading", "Mobile layout", "Easy contact buttons"]),
+            new TechnologyGroup("What You Receive", ["Website files", "Request form", "Admin-ready structure", "Launch guidance"]),
+            new TechnologyGroup("Built With", ["Angular", ".NET", "Secure APIs", "Clean code"]),
+            new TechnologyGroup("Prepared For", ["SEO basics", "Accessibility basics", "Future features", "Ongoing support"])
         ],
         [
-            new ClientOutcome("4", "service tracks"),
-            new ClientOutcome("10", "technology baseline"),
-            new ClientOutcome("100%", "responsive layout"),
-            new ClientOutcome("1", "clear contact path")
+            new ClientOutcome("1", "simple request form"),
+            new ClientOutcome("4", "common service options"),
+            new ClientOutcome("100%", "mobile-friendly"),
+            new ClientOutcome("0", "technical words needed")
         ]);
 
     public Task<PortfolioContent> GetAsync(CancellationToken cancellationToken)

@@ -4,5 +4,5 @@ public sealed record ContactRequest(
     string Name,
     string Email,
     string? Company,
-    string? Budget,
+    string? ProjectType,
     string Message);

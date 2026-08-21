@@ -5,7 +5,7 @@ import { siteSeoMetadata } from '../../core/seo/site-seo.config';
 import { PortfolioApiService } from '../../core/services/portfolio-api.service';
 
 type ContactStatus = 'idle' | 'sending' | 'sent' | 'error';
-type ContactControlName = 'name' | 'email' | 'company' | 'budget' | 'message';
+type ContactControlName = 'name' | 'email' | 'company' | 'projectType' | 'message';
 
 @Component({
   selector: 'app-portfolio-page',
@@ -26,7 +26,7 @@ export class PortfolioPageComponent implements OnInit {
     name: ['', [Validators.required, Validators.maxLength(120)]],
     email: ['', [Validators.required, Validators.email, Validators.maxLength(180)]],
     company: ['', [Validators.maxLength(160)]],
-    budget: ['', [Validators.maxLength(120)]],
+    projectType: ['', [Validators.maxLength(120)]],
     message: ['', [Validators.required, Validators.minLength(20), Validators.maxLength(1500)]]
   });
 
@@ -43,7 +43,7 @@ export class PortfolioPageComponent implements OnInit {
     }
 
     if (control.hasError('required')) {
-      return 'Required';
+      return 'Please fill this in';
     }
 
     if (control.hasError('email')) {
@@ -51,7 +51,7 @@ export class PortfolioPageComponent implements OnInit {
     }
 
     if (control.hasError('minlength')) {
-      return 'Add more detail';
+      return 'Add a little more detail';
     }
 
     if (control.hasError('maxlength')) {

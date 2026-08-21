@@ -12,6 +12,6 @@ Content-Type: application/json
   "name": "Sample Client",
   "email": "client@example.com",
   "company": "Example Company",
-  "budget": "Project-based",
-  "message": "I need a website for my business with a contact form and service pages."
+  "projectType": "New business website",
+  "message": "I need a website for my business where customers can see my services and request a quote."
 }

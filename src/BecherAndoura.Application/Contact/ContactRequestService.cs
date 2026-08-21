@@ -14,20 +14,20 @@ public sealed class ContactRequestService(
 
         if (errors.Count > 0)
         {
-            return new ContactSubmissionResult(false, errors, "Please review the highlighted fields.");
+            return new ContactSubmissionResult(false, errors, "Please review the fields that need more information.");
         }
 
         var lead = new ContactLead(
             Normalize(request.Name),
             Normalize(request.Email),
             NormalizeOptional(request.Company),
-            NormalizeOptional(request.Budget),
+            NormalizeOptional(request.ProjectType),
             Normalize(request.Message),
             clock.UtcNow);
 
         await repository.SaveAsync(lead, cancellationToken);
 
-        return new ContactSubmissionResult(true, [], "Thanks. Becher will review your project details soon.");
+        return new ContactSubmissionResult(true, [], "Thanks. Becher will review your service request soon.");
     }
 
     private static Dictionary<string, string[]> Validate(ContactRequest request)
@@ -36,7 +36,7 @@ public sealed class ContactRequestService(
 
         AddRequired(errors, nameof(request.Name), request.Name, "Please add your name.");
         AddRequired(errors, nameof(request.Email), request.Email, "Please add your email.");
-        AddRequired(errors, nameof(request.Message), request.Message, "Please describe the website or web app you need.");
+        AddRequired(errors, nameof(request.Message), request.Message, "Please describe what you want the website to help you do.");
 
         if (!string.IsNullOrWhiteSpace(request.Email) && !IsValidEmail(request.Email))
         {
@@ -45,7 +45,7 @@ public sealed class ContactRequestService(
 
         if (!string.IsNullOrWhiteSpace(request.Message) && request.Message.Trim().Length < 20)
         {
-            errors[nameof(request.Message)] = ["Please share a little more context about your project."];
+            errors[nameof(request.Message)] = ["Please share a little more context about the service you need."];
         }
 
         return errors;

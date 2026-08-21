@@ -1,6 +1,6 @@
 # Becher Andoura Website
 
-Personal portfolio and service website for Becher Andoura, built with Angular 22 and .NET 10.
+Customer-friendly portfolio and service request website for Becher Andoura, built with Angular 22 and .NET 10.
 
 ## Structure
 
