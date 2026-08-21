@@ -2,6 +2,8 @@ import { SeoMetadata } from './seo.model';
 
 const siteUrl = 'https://becherandoura.com';
 const heroImageUrl = `${siteUrl}/images/becher-hero-workspace.png`;
+const logoUrl = `${siteUrl}/images/becher-andoura-logo.svg`;
+const logoMarkUrl = `${siteUrl}/images/becher-andoura-mark.svg`;
 
 export const siteSeoMetadata: SeoMetadata = {
   title: 'Becher Andoura | Angular & .NET Website Developer',
@@ -31,6 +33,7 @@ export const siteSeoMetadata: SeoMetadata = {
         jobTitle: 'Software Developer',
         url: `${siteUrl}/`,
         image: heroImageUrl,
+        logo: logoMarkUrl,
         knowsAbout: ['Angular', '.NET', 'ASP.NET Core', 'TypeScript', 'Clean Architecture', 'Website Development']
       },
       {
@@ -40,6 +43,7 @@ export const siteSeoMetadata: SeoMetadata = {
         url: `${siteUrl}/`,
         description: 'Website and web application development services using Angular and .NET.',
         image: heroImageUrl,
+        logo: logoUrl,
         provider: {
           '@id': `${siteUrl}/#person`
         },
