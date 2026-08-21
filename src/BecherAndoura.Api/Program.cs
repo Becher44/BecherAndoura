@@ -26,8 +26,12 @@ builder.Services.AddCors(options =>
 builder.Services.AddOpenApi();
 builder.Services.AddProblemDetails();
 
+builder.Services.Configure<ContactEmailOptions>(
+    builder.Configuration.GetSection(ContactEmailOptions.SectionName));
+
 builder.Services.AddScoped<IPortfolioContentService, PortfolioContentService>();
 builder.Services.AddScoped<IContactRequestService, ContactRequestService>();
+builder.Services.AddScoped<IContactRequestNotifier, SmtpContactRequestNotifier>();
 builder.Services.AddSingleton<IPortfolioContentRepository, InMemoryPortfolioContentRepository>();
 builder.Services.AddSingleton<IContactLeadRepository, InMemoryContactLeadRepository>();
 builder.Services.AddSingleton<IClock, SystemClock>();

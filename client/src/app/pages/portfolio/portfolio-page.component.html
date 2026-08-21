@@ -149,6 +149,10 @@
         <p>
           You can describe the website you want, the problem with your current website, or the type of customers you want to reach. No technical explanation is required.
         </p>
+        <p class="contact-email-note">
+          Requests are sent to
+          <a href="mailto:Becherandoura@hotmail.com?subject=Website%20service%20request">Becherandoura@hotmail.com</a>.
+        </p>
 
         @if (portfolio.error()) {
           <p class="api-note">{{ portfolio.error() }}</p>
@@ -216,11 +220,11 @@
         </button>
 
         @if (contactStatus() === 'sent') {
-          <p class="form-status form-status--success">Thanks. Your request was sent successfully.</p>
+          <p class="form-status form-status--success">Thanks. Your request was sent to Becher.</p>
         }
 
         @if (contactStatus() === 'error') {
-          <p class="form-status form-status--error">The form service is not reachable yet. Please try again in a moment.</p>
+          <p class="form-status form-status--error">The form service is not reachable yet. You can email Becher directly at Becherandoura@hotmail.com.</p>
         }
       </form>
     </div>

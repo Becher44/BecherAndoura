@@ -28,6 +28,22 @@ pnpm start
 
 Open `http://localhost:4300`. The Angular dev proxy forwards `/api` requests to `http://localhost:5004`.
 
+## Contact Email
+
+All service requests are addressed to `Becherandoura@hotmail.com`.
+
+Set SMTP values in the hosting environment to send form submissions as email:
+
+```powershell
+$env:ContactEmail__Smtp__Host = "your-smtp-host"
+$env:ContactEmail__Smtp__Port = "587"
+$env:ContactEmail__Smtp__EnableSsl = "true"
+$env:ContactEmail__Smtp__UserName = "your-smtp-user"
+$env:ContactEmail__Smtp__Password = "your-smtp-password"
+```
+
+You can also override `ContactEmail__SenderEmail` if the SMTP provider requires a verified sender address. Email passwords and app passwords should stay in environment variables or host secrets, not in git.
+
 ## Notes
 
 - The backend uses Clean Architecture style boundaries, dependency inversion, repository abstractions, validation services, and Minimal API endpoint groups.
