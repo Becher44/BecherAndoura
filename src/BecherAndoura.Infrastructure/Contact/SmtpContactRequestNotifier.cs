@@ -18,7 +18,7 @@ public sealed class SmtpContactRequestNotifier(
         if (!options.IsConfigured())
         {
             logger.LogWarning(
-                "Contact request email was not sent because SMTP is not configured. Configure ContactEmail to send requests to {RecipientEmail}.",
+                "Contact request email was not sent because SMTP is not fully configured. Configure ContactEmail to send requests to {RecipientEmail}.",
                 options.RecipientEmail);
             return;
         }

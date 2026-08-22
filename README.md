@@ -30,19 +30,26 @@ Open `http://localhost:4300`. The Angular dev proxy forwards `/api` requests to 
 
 ## Contact Email
 
-All service requests are addressed to `Becherandoura@hotmail.com`.
+All service requests are addressed to `Becherandoura@hotmail.com` and sent through the Gmail sender account `Becherandoura@gmail.com`.
 
 Set SMTP values in the hosting environment to send form submissions as email:
 
 ```powershell
-$env:ContactEmail__Smtp__Host = "your-smtp-host"
+$env:ContactEmail__SenderEmail = "Becherandoura@gmail.com"
+$env:ContactEmail__Smtp__Host = "smtp.gmail.com"
 $env:ContactEmail__Smtp__Port = "587"
 $env:ContactEmail__Smtp__EnableSsl = "true"
-$env:ContactEmail__Smtp__UserName = "your-smtp-user"
-$env:ContactEmail__Smtp__Password = "your-smtp-password"
+$env:ContactEmail__Smtp__UserName = "Becherandoura@gmail.com"
+$env:ContactEmail__Smtp__Password = "your-gmail-app-password"
 ```
 
-You can also override `ContactEmail__SenderEmail` if the SMTP provider requires a verified sender address. Email passwords and app passwords should stay in environment variables or host secrets, not in git.
+For local development, store the Gmail app password with .NET user secrets instead of `appsettings.json`:
+
+```powershell
+dotnet user-secrets set "ContactEmail:Smtp:Password" "your-gmail-app-password" --project .\src\BecherAndoura.Api\BecherAndoura.Api.csproj
+```
+
+Email passwords and app passwords should stay in environment variables, .NET user secrets, or host secrets, not in git.
 
 ## Notes
 
