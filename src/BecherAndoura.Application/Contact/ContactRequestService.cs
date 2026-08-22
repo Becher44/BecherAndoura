@@ -6,6 +6,7 @@ namespace BecherAndoura.Application.Contact;
 
 public sealed class ContactRequestService(
     IContactLeadRepository repository,
+    IContactRequestNotifier notifier,
     IClock clock) : IContactRequestService
 {
     public async Task<ContactSubmissionResult> SubmitAsync(ContactRequest request, CancellationToken cancellationToken)
@@ -26,6 +27,7 @@ public sealed class ContactRequestService(
             clock.UtcNow);
 
         await repository.SaveAsync(lead, cancellationToken);
+        await notifier.NotifyAsync(lead, cancellationToken);
 
         return new ContactSubmissionResult(true, [], "Thanks. Becher will review your service request soon.");
     }
