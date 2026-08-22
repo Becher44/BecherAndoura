@@ -23,23 +23,40 @@ public sealed class SmtpContactRequestNotifier(
             return;
         }
 
-        using var message = CreateMessage(options, lead);
+        using var ownerMessage = CreateOwnerNotificationMessage(options, lead);
+        using var customerMessage = CreateCustomerConfirmationMessage(options, lead);
         using var smtpClient = CreateSmtpClient(options.Smtp);
 
-        await smtpClient.SendMailAsync(message).WaitAsync(cancellationToken);
+        await smtpClient.SendMailAsync(ownerMessage).WaitAsync(cancellationToken);
+        await smtpClient.SendMailAsync(customerMessage).WaitAsync(cancellationToken);
     }
 
-    private static MailMessage CreateMessage(ContactEmailOptions options, ContactLead lead)
+    private static MailMessage CreateOwnerNotificationMessage(ContactEmailOptions options, ContactLead lead)
     {
         var message = new MailMessage
         {
             From = new MailAddress(options.SenderEmail, options.SenderName),
             Subject = $"{options.SubjectPrefix}: {lead.ProjectType ?? "Website request"}",
-            Body = CreateBody(lead)
+            Body = CreateOwnerNotificationBody(lead)
         };
 
         message.To.Add(new MailAddress(options.RecipientEmail));
         message.ReplyToList.Add(new MailAddress(lead.Email, lead.Name));
+
+        return message;
+    }
+
+    private static MailMessage CreateCustomerConfirmationMessage(ContactEmailOptions options, ContactLead lead)
+    {
+        var message = new MailMessage
+        {
+            From = new MailAddress(options.SenderEmail, options.SenderName),
+            Subject = "We received your website service request",
+            Body = CreateCustomerConfirmationBody(lead)
+        };
+
+        message.To.Add(new MailAddress(lead.Email, lead.Name));
+        message.ReplyToList.Add(new MailAddress(options.RecipientEmail, "Becher Andoura"));
 
         return message;
     }
@@ -61,7 +78,7 @@ public sealed class SmtpContactRequestNotifier(
         return smtpClient;
     }
 
-    private static string CreateBody(ContactLead lead)
+    private static string CreateOwnerNotificationBody(ContactLead lead)
     {
         var company = lead.Company ?? "Not provided";
         var projectType = lead.ProjectType ?? "Not selected";
@@ -76,5 +93,34 @@ public sealed class SmtpContactRequestNotifier(
             string.Empty,
             "Message:",
             lead.Message);
+    }
+
+    private static string CreateCustomerConfirmationBody(ContactLead lead)
+    {
+        var projectType = lead.ProjectType ?? "your request";
+
+        return string.Join(
+            Environment.NewLine,
+            $"Hi {GetFirstName(lead.Name)},",
+            string.Empty,
+            "Thanks for contacting Becher Andoura. I received your request and will review it soon.",
+            string.Empty,
+            $"Request type: {projectType}",
+            $"Submitted: {lead.SubmittedAt:MMMM d, yyyy 'at' h:mm tt 'UTC'}",
+            string.Empty,
+            "Your message:",
+            lead.Message,
+            string.Empty,
+            "If you need to add anything, you can reply to this email.",
+            string.Empty,
+            "Regards,",
+            "Becher Andoura",
+            "Website Developer & Software Developer");
+    }
+
+    private static string GetFirstName(string name)
+    {
+        var parts = name.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        return parts.Length > 0 ? parts[0] : name;
     }
 }

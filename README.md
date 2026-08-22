@@ -30,7 +30,7 @@ Open `http://localhost:4300`. The Angular dev proxy forwards `/api` requests to 
 
 ## Contact Email
 
-All service requests are addressed to `Becherandoura@hotmail.com` and sent through the Gmail sender account `Becherandoura@gmail.com`.
+All service requests are addressed to `Becherandoura@hotmail.com` and sent through the Gmail sender account `Becherandoura@gmail.com`. Customers also receive a confirmation email after the form accepts their request.
 
 Set SMTP values in the hosting environment to send form submissions as email:
 
